@@ -11,3 +11,5 @@ services:
         environment:
             NUXT_ENV: ${APP_ENV:-development}
             APP_NAME: ${APP_NAME:-app}
+            GMAPS_KEY: ${GMAPS_KEY}
+            GANALYTICS_KEY: ${GANALYTICS_KEY}
