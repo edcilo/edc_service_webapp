@@ -70,7 +70,7 @@ export default {
     [
       'nuxt-gmaps',
       {
-        key: 'AIzaSyB7Ou4HQ-QSbToR75LNRtdynhWrw4gwvBQ',
+        key: null,
         // you can use libraries: ['places']
       },
     ],
