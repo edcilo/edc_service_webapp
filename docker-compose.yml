@@ -1,0 +1,13 @@
+version : "3.7"
+
+services:
+    webapp_nuxt:
+        image: edcilo/nuxtjs:1.0.0
+        restart: always
+        ports:
+            - ${APP_PORT:-3000}:3000
+        volumes:
+            - ./app:/code/app
+        environment:
+            NUXT_ENV: ${APP_ENV:-development}
+            APP_NAME: ${APP_NAME:-app}
