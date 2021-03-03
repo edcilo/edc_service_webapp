@@ -13,3 +13,19 @@ services:
             APP_NAME: ${APP_NAME:-app}
             GMAPS_KEY: ${GMAPS_KEY}
             GANALYTICS_KEY: ${GANALYTICS_KEY}
+
+    webapp_nginx:
+        container_name: webapp_nginx
+        image: nginx:alpine
+        restart: always
+        volumes:
+            - ./docker/nginx/sites:/etc/nginx/conf.d
+        environment:
+            - VIRTUAL_HOST=${SERVICE_WEBAPP_DNS}
+            - LETSENCRYPT_HOST=${SERVICE_WEBAPP_DNS}
+            - LETSENCRYPT_EMAIL=${SSL_LETSENCRYPT_EMAIL}
+
+networks:
+    default:
+        external:
+            name: edcNet
